@@ -18,9 +18,10 @@ from dotenv import load_dotenv
 
 
 #pp python path
-PP = ""
+PyP = "/home/sbassi/miniconda3/envs/prost_t5_cuda12.4.1/bin/python"
 #mp model path
-MP = ""
+PrP = '/home/sbassi/src/scr/run_new_set.py'
+MP = "/home/sbassi/PT5_finetuned.pth"
 
 load_dotenv('.env.prod')
 db_config = {
@@ -51,6 +52,7 @@ def generate_aspred_input(config):
         
         with open('forASPRED.csv', 'w', newline='') as csvfile:
             writer = csv.writer(csvfile)
+            writer.writerow(["sequence", "label"])
             for _, sequence in results:
                 writer.writerow([sequence, 0])
         
@@ -66,9 +68,9 @@ def generate_aspred_input(config):
             conn.close()
 
 
-def run_prediction(python_path, model_path):
+def run_prediction(python_path, prg_path, model_path):
     print("Running prediction script...")
-    subprocess.run([python_path, 'run_prediction.py', model_path, 'forASPRED.csv'])
+    subprocess.run(f"{python_path} {prg_path} {model_path} forASPRED.csv", shell=True, check=True)
 
 
 def run_prediction_test():
@@ -140,9 +142,8 @@ def update_database(id_lst, predictions, config):
 if __name__ == "__main__":
     id_lst = generate_aspred_input(db_config)
     print("ID list:", id_lst)
-    #run_prediction(PP, MP)
-    run_prediction_test()
+    run_prediction(PyP, PrP, MP)
+    ##run_prediction_test()
     preds_lst = read_output()
     print(preds_lst)
     update_database(id_lst, preds_lst, db_config)
-
