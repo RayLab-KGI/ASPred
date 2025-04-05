@@ -1,4 +1,12 @@
 
+
+"""
+Reads the DB for get pending sequences.
+Run pending sequences
+Retrieve results from aspre output
+Sends the results to the DB
+"""
+
 import mysql.connector
 import csv
 import subprocess
@@ -58,9 +66,9 @@ def generate_aspred_input(config):
             conn.close()
 
 
-def run_prediction():
+def run_prediction(python_path, model_path):
     print("Running prediction script...")
-    subprocess.run(['python', 'run_prediction.py', 'model1', 'forASPRED.csv'])
+    subprocess.run([python_path, 'run_prediction.py', model_path, 'forASPRED.csv'])
 
 
 def run_prediction_test():
@@ -132,7 +140,7 @@ def update_database(id_lst, predictions, config):
 if __name__ == "__main__":
     id_lst = generate_aspred_input(db_config)
     print("ID list:", id_lst)
-    #run_prediction()
+    #run_prediction(PP, MP)
     run_prediction_test()
     preds_lst = read_output()
     print(preds_lst)
