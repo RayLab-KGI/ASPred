@@ -10,7 +10,7 @@ ASL is a reciprocal licence very similar to GPL and the core terms are identical
 
 The non-commercial limitation makes ASL incompatible with the GPL and other open-source licences with copyleft provisions because these licences require that modified versions of the original program are made available free of charge for any type of use, including commercial, and this is prevented by ASL.  As the two sets of reciprocal terms are incompatible, any modified version of the original program combining ASL and copylefted open-source code can be used internally but cannot be licensed out.
 
-The non-commercial restriction is an integral part of the license and you may not remove it without the consent of the rights holder in the ASL licensed code. Please contact __the original licensor__ for any questions and/or to enquire about commercial use rights. 
+The non-commercial restriction is an integral part of the license and you may not remove it without the consent of the rights holder in the ASL licensed code. Please contact Loren_Martin@kgi.edu for any questions and/or to enquire about commercial use rights. 
 
 This license text here is hereby licensed to you under ASL, i.e. under its own terms. 
 
@@ -87,7 +87,7 @@ ASPred is published and distributed under the Academic Software License v1.0 (AS
 
 ASPred is distributed in the hope that it will be useful for non-commercial academic research, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the ASL for more details. 
 
-You should have received a copy of the ASL along with this program; if not, write to sbassi@kgi.edu.  It is also published at https://github.com/RayLab-KGI/ASPred.
+You should have received a copy of the ASL along with this program; if not, write to sbassi@kgi.edu.  It is also published at [https://github.com/RayLab-KGI/ASPred](https://github.com/RayLab-KGI/ASPred?tab=License-1-ov-file#readme).
 
 You may contact the original licensor at Loren_Martin@kgi.edu.
 
